@@ -126,7 +126,7 @@ class MoveItControllerManager : public moveit_controller_manager::MoveItControll
    * Throttled down to 1 Hz, controllers_mutex_ must be locked externally
    * @param force force rediscover
    */
-  void discover(bool force = false)
+  void discover(bool force = true)
   {
     // Skip if controller stamp is too new for new discovery, enforce update if force==true
     if (!force && ((node_->now() - controllers_stamp_) < CONTROLLER_INFORMATION_VALIDITY_AGE))
